@@ -1,0 +1,69 @@
+#login_signup_heading{
+    height: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+    background-color:#f1f6f7;
+}
+#login_signup_heading div{
+    font-size: 36px;    
+    font-weight: 400;
+}
+
+#login_signup_container{
+    width: 80%;
+    margin: 60px auto;
+    display: flex;
+    flex-flow: row wrap;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    height: 600px;
+}
+#login_signup_container div{
+    width: 50%;
+}
+#signup_box{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: #384AEB;
+}
+#signup_box div{
+    width: 80%;
+    text-align: center;
+}
+#signup_box1{
+    font-size: 28px;
+    font-family: serif;
+    color:white;
+}
+#signup_box2{
+    padding-top: 16px;
+    font-size: 16px;
+    color:white;
+}
+#signup_box3{
+    padding-top: 42px;
+    color:white;
+}
+#login_box{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: #e9e9e9;
+}
+#reg_button{
+    width: 200px;
+}
+#login_button{
+    width:310px;
+    margin:24px auto;
+}
+#login_box1{
+    font-size: 24px;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    padding-bottom: 32px;
+    font-weight: 700;
+
+}
