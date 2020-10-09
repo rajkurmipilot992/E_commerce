@@ -12,7 +12,7 @@
 
 #login_signup_container{
     width: 80%;
-    margin: 60px auto;
+    margin: 100px auto;
     display: flex;
     flex-flow: row wrap;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
@@ -58,7 +58,7 @@
 }
 #register_button{
     width:310px;
-    margin:24px auto;
+    margin:0px auto;
 }
 #signup_box1{
     font-size: 24px;
@@ -69,15 +69,16 @@
 }
 #error_box{
     display: none;
-    width: 300px;
-    margin: auto auto;
+    width: 75%;
+    margin: 0px auto;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     border: 1px solid rgb(255, 71, 71);
     background-color: rgb(245, 220, 220);
     color: rgb(255, 40, 40);
     border-radius: 4px;
-    padding: 2px 18px;
-    font-size: 12px;
+    padding: 0px 32px;
+    font-size: 13px;
+	font-weight:bold;
     position: relative;
-    bottom: 640px;
-    left: 280px;
+    bottom: 788px;
 }

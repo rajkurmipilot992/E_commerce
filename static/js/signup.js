@@ -64,17 +64,19 @@ form.addEventListener('submit',(e)=>{
 		err_arr[i++] = 'password and repassword must match!!';
     }
 
-    let err_msg = "";
+    let err_msg = "<ul>";
     if(flag)
         form.submit();
     else{
         
         error_box.style.display = 'block';
         err_arr.forEach((emsg)=>{
-			err_msg +=  emsg +"<br>";
+			err_msg +=  "<li>" + emsg + "</li>";
         });
-        console.log(err_msg);
+        err_msg+="</ul>";
+        // console.log(err_msg);
         error_box.innerHTML = err_msg;
+        error_box.scrollIntoView({behavior:"smooth"});
     }
 });
 
@@ -82,7 +84,7 @@ register_button.addEventListener('click',()=>{
     i = 0;
     err_arr.length = 0;
     error_box.innerHTML = "";
-	error_box.style.display = 'none';
+    error_box.style.display = 'none';
 });
 
 userName.addEventListener('focus', removeMsg)

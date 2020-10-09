@@ -27,6 +27,16 @@
      Welcome to Tomcat
   </description>
 
+  <context-param>
+    <param-name>sender_gmail</param-name>
+    <param-value>rajkurmi1975@gmail.com</param-value>
+  </context-param>
+
+  <context-param>
+    <param-name>sender_gmail_password</param-name>
+    <param-value>4636@Gmail</param-value>
+  </context-param>
+
   <servlet>
     <servlet-name>app001</servlet-name>
     <servlet-class>controllers.ShowSignupServlet</servlet-class>

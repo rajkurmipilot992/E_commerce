@@ -85,4 +85,26 @@ public class User{
 	public void setStatus(Status status) {
 		this.status = status;
 	}
+	public boolean saveUser(){
+		boolean flag = false;
+		Connection con = null;
+		try{
+			Class.forName("com.mysql.jdbc.Driver");
+			con = DriverManager.getConnection("jdbc:mysql://localhost:3306/ecomdb?user=root&password=1234");
+			String query = "insert into Users (username, email, password) value (?,?,?)";
+			PreparedStatement pst = con.prepareStatement(query);
+			pst.setString(1, userName);
+			pst.setString(2, email);
+			// StrongPasswordEncryptor spe = new StrongPasswordEncryptor();
+			pst.setString(3,password);
+			pst.executeUpdate();
+			flag = true;
+
+		}catch(SQLException|ClassNotFoundException e){
+			e.printStackTrace();
+		}finally{
+			try{ con.close(); }catch(SQLException e){ e.printStackTrace(); }
+		}
+		return flag;
+	}
 }

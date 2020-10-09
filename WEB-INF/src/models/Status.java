@@ -11,17 +11,17 @@ public class Status{
         this.status = status;
     }
     
-    public void setStatusId(statusId){
+    public void setStatusId(int statusId){
         this.statusId = statusId;
     }
     public Integer getStatusId(){
         return this.statusId;
     }
     
-    public void setStatus(status){
+    public void setStatus(String status){
         this.status = status;
     }
-    public Integer getStatus(){
+    public String getStatus(){
         return this.status;
     }
 }
