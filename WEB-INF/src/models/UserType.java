@@ -4,24 +4,34 @@ public class UserType{
     private Integer userTypeId;
     private String userType;
     
+    //contructor
     public UserType(){
         super();
     }
-    public UserType( String userType){
-        super();
-        this.userType = userType;
-    }
+    public UserType(Integer userTypeId) {
+		super();
+		this.userTypeId = userTypeId;
+	}
 
-    public Integer getUserTypeId(){
-        return this.userTypeId;
+	public UserType(Integer userTypeId, String userType) {
+		super();
+		this.userTypeId = userTypeId;
+		this.userType = userType;
     }
-    public void setUserTypeId(Integer userTypeId){
-        this.userTypeId = userTypeId;
-    }
-    public String getUserType(){
-        return this.userType;
-    }
-    public void setUserTypeId(String userType){
-        this.userType = userType;
-    }
+    //getter-setter methods
+    public Integer getUserTypeId() {
+		return userTypeId;
+	}
+
+	public void setUserTypeId(Integer userTypeId) {
+		this.userTypeId = userTypeId;
+	}
+
+	public String getUserType() {
+		return userType;
+	}
+
+	public void setUserType(String userType) {
+		this.userType = userType;
+	}
 }

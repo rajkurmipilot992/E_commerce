@@ -8,6 +8,9 @@
     <link rel="stylesheet" href="static/css/form.css" />
     <link rel="stylesheet" href="static/css/signin.css" />
     <link rel="stylesheet" href="static/css/footer.css" />
+
+  <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+
     
     <title>Signin</title>
 </head>
@@ -39,19 +42,27 @@
           <div id="login_box">
             <div id="login_box1">LOGIN TO ENTER</div>
             <div id="login_box2">
-              <form>
-                <input class="input" maxlength="30" minlength="5" type="text" placeholder="Username" name="username" />
+              <form action="signin.do" method="POST">
+                <input class="input" maxlength="30" minlength="5" type="text" placeholder="Username" name="usernameOrEmail" />
                 <input class="input" type="password" maxlength="12" minlength="6" placeholder="Password" name="password" />
+                <div id="recaptcha" class="g-recaptcha" data-sitekey="6Lea-dMZAAAAAHwT9-OQbXT3y3Q1rQWxr32hU_G9"></div><br />
                 <input class="button" id="login_button" type="submit" value="Login" />
               </form>
             </div>
           </div>
         
         </div>
+
+        <% String error = (String)request.getAttribute("error"); %>
+        <div id="error_box" style='display: <%= error==null?"none":"block"%>;'>
+          <%=error%>
+        </div>
+
       </div>
     
     <!-- footer -->
     <%@ include file="footer.jsp" %>
+
 
 </body>
 

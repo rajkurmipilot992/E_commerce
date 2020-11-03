@@ -34,18 +34,23 @@
           There are advances being made in science and technology everyday, and a good example of this is the
         </div>
         <div id="login_box3">
-          <a href="signin_page.do"><input class="button" id="login_button" type="submit" value="Login Now" /></a>
+          <a href="signin.do"><input class="button" id="login_button" type="submit" value="Login Now" /></a>
         </div>
       </div>
       <div id="signup_box">
         <div id="signup_box1">CREATE AN ACCOUNT</div>
         <div id="signup_box2">
           <form action="signup_page.do" method="POST">
+
+            <!-- ################### -->
             <input class="input" maxlength="30" minlength="5" type="text" placeholder="Username" name="username" />
+            <div class="warn_div"><span class="warning" id="username_warn">Username already taken!</span></div>
             <input class="input" type="email" placeholder="Email" name="email" />
+            <div class="warn_div"><span class="warning" id="email_warn">Already Exist!</span></div>
             <input class="input" maxlength="12" minlength="6" type="password" placeholder="password" name="password" />
             <input class="input" type="password" maxlength="12" minlength="6" placeholder="Retype-Password"
               name="repassword" />
+            <!-- ################ -->
             <div id="recaptcha" class="g-recaptcha" data-sitekey="6Lea-dMZAAAAAHwT9-OQbXT3y3Q1rQWxr32hU_G9"></div><br />
             <input class="button" id="register_button" type="submit" value="Register" />
           </form>
@@ -53,10 +58,12 @@
       </div>
 
     </div>
+
     <% String error = (String)request.getAttribute("error"); %>
     <div id="error_box" style='display: <%= error==null?"none":"block"%>;'>
       <%=error%>
     </div>
+
   </div>
 
   <!-- footer -->

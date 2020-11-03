@@ -28,7 +28,7 @@ public class ShowSignupServlet extends HttpServlet{
         boolean flag = true;
         String error_msg = "<ul>";
         flag = GoogleCaptcha.checkRecaptcha(captchaResponse);
-        System.out.println("#####################google recaptcha:"+flag);
+        
         if(flag){
             p = Pattern.compile("^[a-zA-Z][a-zA-Z0-9]{4,29}$");
             m = p.matcher(username);
@@ -53,9 +53,9 @@ public class ShowSignupServlet extends HttpServlet{
                 flag = false;
                 error_msg += "</li>password and repassword must match!!</p></li>";
             }
-            System.out.println("#####################flag:"+flag);
 
             if(flag){
+                // String activationCode = ActivationCode.generateActivationCode();
                 User user = new User(username, email, password);
                 if(user.saveUser()){
                     ServletContext context = getServletContext();
@@ -64,6 +64,11 @@ public class ShowSignupServlet extends HttpServlet{
 					long activationCode = ActivationCode.generateActivationCode();
 					// String msg = EmailMessages.getAccountActivationMail(userName,activationCode);
 					// EmailSender.sendEmail(email,"eCart Account Activation Mail",msg,senderEmail,senderEmailPassword);
+                    
+                    String uploadsPath = getServletContext().getRealPath("/WEB-INF/uploads");
+ 					File file = new File(uploadsPath,username);
+					file.mkdir();
+
                     response.sendRedirect("signin.jsp");
                     
                 }else{

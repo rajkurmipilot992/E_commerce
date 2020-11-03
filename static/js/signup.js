@@ -5,9 +5,47 @@ const userName = form.username;
 const email = form.email;
 const password = form.password;
 const repassword = form.repassword;
+const username_warn = document.querySelector('#username_warn');
+const email_warn = document.querySelector('#email_warn');
 
 const unamePattern = /^[a-zA-Z][a-zA-Z0-9]{4,29}$/;
 const emailPattern = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/;
+
+userName.onblur = checkUniqueKey;
+email.onblur = checkUniqueKey;
+
+userName.onclick = ()=>{
+    username_warn.style.display = "none";    
+};
+email.onclick = ()=>{
+    email_warn.style.display = "none";    
+};
+
+
+let request;
+let curFld;
+function checkUniqueKey(){
+	if(this.value.length!=0){
+        curFld = this;
+		request = new XMLHttpRequest();
+		request.open('GET','unique_check.do?key='+this.value,true);
+		request.onreadystatechange = ()=>{
+            if(request.readyState==4&&request.status==200){
+                if(request.responseText=='true'){
+                    console.log(curFld.name);
+                    if(curFld.name=="username"){
+                        username_warn.style.display='block';
+                        userName.style.borderColor = "red";
+                    }else{
+                        email_warn.style.display='block';
+                        email.style.borderColor = "red";
+                    }
+                }
+            }
+        };
+		request.send();
+	}
+}
 
 userName.addEventListener("keyup", (e)=>{
     if(unamePattern.test(userName.value) && userName.value.length>4){
@@ -74,7 +112,6 @@ form.addEventListener('submit',(e)=>{
 			err_msg +=  "<li>" + emsg + "</li>";
         });
         err_msg+="</ul>";
-        // console.log(err_msg);
         error_box.innerHTML = err_msg;
         error_box.scrollIntoView({behavior:"smooth"});
     }

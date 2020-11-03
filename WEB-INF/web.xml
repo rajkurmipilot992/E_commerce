@@ -52,7 +52,77 @@
   </servlet>
   <servlet-mapping>
     <servlet-name>app002</servlet-name>
-    <url-pattern>/signin_page.do</url-pattern>
+    <url-pattern>/signin.do</url-pattern>
   </servlet-mapping>
+
+  <servlet>
+    <servlet-name>app003</servlet-name>
+    <servlet-class>controllers.UniqueCheckServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>app003</servlet-name>
+    <url-pattern>/unique_check.do</url-pattern>
+  </servlet-mapping>
+
+  <servlet>
+    <servlet-name>app004</servlet-name>
+    <servlet-class>controllers.LogoutServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>app004</servlet-name>
+    <url-pattern>/logout.do</url-pattern>
+  </servlet-mapping>
+
+  <servlet>
+    <servlet-name>app005</servlet-name>
+    <servlet-class>controllers.HomeServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>app005</servlet-name>
+    <url-pattern>/home.do</url-pattern>
+  </servlet-mapping>
+
+  <servlet>
+    <servlet-name>app006</servlet-name>
+    <servlet-class>controllers.ProfileServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>app006</servlet-name>
+    <url-pattern>/profile.do</url-pattern>
+  </servlet-mapping>
+
+  <servlet>
+    <servlet-name>app007</servlet-name>
+    <servlet-class>controllers.OTPServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>app007</servlet-name>
+    <url-pattern>/sendOTP.do</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+    <servlet-name>app008</servlet-name>
+    <servlet-class>controllers.VerifyOTPServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>app008</servlet-name>
+    <url-pattern>/verifyOTP.do</url-pattern>
+  </servlet-mapping>
+
+  <servlet>
+    <servlet-name>app009</servlet-name>
+    <servlet-class>controllers.MobileOTPFlag</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>app009</servlet-name>
+    <url-pattern>/mobileOTPFlag.do</url-pattern>
+  </servlet-mapping>
+
+
+
+
+
+
+
 
 </web-app>

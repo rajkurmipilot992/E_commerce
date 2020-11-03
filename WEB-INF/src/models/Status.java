@@ -7,6 +7,10 @@ public class Status{
     public Status(){
         super();
     }
+
+    public Status(Integer statusId){
+		this.statusId = statusId;
+	}
     public Status(String status){
         this.status = status;
     }
