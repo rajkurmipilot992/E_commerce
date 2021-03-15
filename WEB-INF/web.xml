@@ -34,7 +34,7 @@
 
   <context-param>
     <param-name>sender_gmail_password</param-name>
-    <param-value>4636@Gmail</param-value>
+    <param-value>8989754636@password_gmail</param-value>
   </context-param>
 
   <servlet>
@@ -118,11 +118,54 @@
     <url-pattern>/mobileOTPFlag.do</url-pattern>
   </servlet-mapping>
 
+  <servlet>
+	  <servlet-name>ecart010</servlet-name>
+	  <servlet-class>controllers.NewSellerServlet</servlet-class>
+  </servlet>
+
+  <servlet-mapping>
+	  <servlet-name>ecart010</servlet-name>
+	  <url-pattern>/new_seller.do</url-pattern>
+  </servlet-mapping>
+
+  <servlet>
+	  <servlet-name>ecart011</servlet-name>
+	  <servlet-class>controllers.SellerPageServlet</servlet-class>
+  </servlet>
+
+  <servlet-mapping>
+	  <servlet-name>ecart011</servlet-name>
+	  <url-pattern>/seller_page.do</url-pattern>
+  </servlet-mapping>
+
+  <servlet>
+	  <servlet-name>ecart012</servlet-name>
+	  <servlet-class>controllers.SellerDashboardServlet</servlet-class>
+  </servlet>
+
+  <servlet-mapping>
+	  <servlet-name>ecart012</servlet-name>
+	  <url-pattern>/seller_dashboard.do</url-pattern>
+  </servlet-mapping>
+
+  <servlet>
+	  <servlet-name>ecart013</servlet-name>
+	  <servlet-class>controllers.NewProductServlet</servlet-class>
+  </servlet>
+
+  <servlet-mapping>
+	  <servlet-name>ecart013</servlet-name>
+	  <url-pattern>/new_product.do</url-pattern>
+  </servlet-mapping>
 
 
 
 
 
 
+
+  <listener>
+	  <listener-class>listeners.AppListener</listener-class>
+  </listener>
 
 </web-app>

@@ -38,6 +38,9 @@
                         </div>
                         <div class="navbar_menu_item navbar_menu_heading">ACCOUNT SETTINGS</div>
                     </div>
+                    <a href="seller_page.do">
+                        <div class="navbar_menu_subheading">Your Seller Account</div>
+                    </a>
                     <a href="#">
                         <div class="navbar_menu_subheading">Profile Information</div>
                     </a>
